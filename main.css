@@ -1,34 +1,71 @@
+/* ===== BASE ===== */
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background: #faf9f7;
 }
 
+/* ===== TITLE ===== */
 .carousel-title {
   text-align: center;
   font-size: 24px;
   font-weight: 400;
-  margin: 20px 0;
+  margin: 30px 0 20px;
+  color: #2c2c2c;
 }
 
+/* ===== TRACK ===== */
 .carousel-track {
   display: flex;
   gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 16px;
+  padding: 0 16px 30px;
+  -webkit-overflow-scrolling: touch;
+
+  /* تحسين desktop */
+  cursor: grab;
+  position: relative;
 }
 
+/* عند السحب */
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+/* ===== SLIDE ===== */
 .slide {
-  flex: 0 0 85%;
+  flex: 0 0 70%; /* مهم: لإظهار جزء من الصورة التالية */
   scroll-snap-align: center;
 }
 
+/* ===== IMAGE ===== */
 .slide img {
   width: 100%;
   border-radius: 16px;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* hide scrollbar */
+/* ===== HIDE SCROLLBAR ===== */
 .carousel-track::-webkit-scrollbar {
   display: none;
+}
+
+/* ===== DESKTOP ARROW HINT ===== */
+.carousel-track::after {
+  content: "→";
+  font-size: 22px;
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  .slide {
+    flex: 0 0 40%; /* في الحاسوب تظهر صورتين تقريبًا */
+  }
 }
