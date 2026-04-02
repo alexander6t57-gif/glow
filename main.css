@@ -38,3 +38,44 @@ body {
 .carousel-track::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== RESET ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #faf9f7;
+}
+
+/* ===== TITLE ===== */
+.carousel-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 30px 0 20px;
+  color: #2c2c2c;
+}
+
+/* ===== TRACK ===== */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 0 16px 30px;
+}
+
+/* ===== SLIDES ===== */
+.slide {
+  flex: 0 0 300px; /* ثابت = يعمل دائمًا */
+}
+
+/* ===== IMAGE ===== */
+.slide img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ===== HIDE SCROLLBAR ===== */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
