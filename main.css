@@ -1,35 +1,31 @@
-/* ===== FORCE CAROUSEL FIX ===== */
+/* ===== FORCE SCROLL FIX (IMPORTANT) ===== */
 
-/* مهم جدا: كسر أي overflow من الخارج */
+/* فك القيود من أي container */
 .carousel-track {
   display: flex !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-
   gap: 12px;
-  padding: 10px 16px;
 
-  scroll-behavior: smooth;
-
-  /* كسر أي قيود من theme */
-  width: 100% !important;
-  max-width: 100% !important;
+  /* هذا أهم سطر */
+  white-space: nowrap !important;
 }
 
-/* مهم: منع الصور من النزول تحت */
+/* منع العناصر من النزول */
 .carousel-track .slide {
-  flex: 0 0 280px !important;
+  display: inline-block !important;
+  width: 280px !important;
   min-width: 280px !important;
 }
 
 /* الصور */
 .carousel-track img {
-  width: 100% !important;
+  width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
-/* إخفاء scrollbar */
-.carousel-track::-webkit-scrollbar {
-  display: none;
+/* تأكد أن parent لا يمنع scroll */
+body, html {
+  overflow-x: visible !important;
 }
