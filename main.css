@@ -1,31 +1,61 @@
-/* ===== FORCE SCROLL FIX (IMPORTANT) ===== */
+/* ===== FORCE SIMPLE WORKING CAROUSEL ===== */
 
-/* فك القيود من أي container */
+/* مهم */
 .carousel-track {
-  display: flex !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
+  display: flex;
+  overflow-x: auto;
   gap: 12px;
 
-  /* هذا أهم سطر */
-  white-space: nowrap !important;
+  padding: 20px;
+
+  /* هذا يمنع تكسير layout */
+  flex-wrap: nowrap;
 }
 
-/* منع العناصر من النزول */
-.carousel-track .slide {
-  display: inline-block !important;
-  width: 280px !important;
-  min-width: 280px !important;
+/* كل صورة */
+.slide {
+  flex: 0 0 300px; /* عرض ثابت */
 }
 
-/* الصور */
-.carousel-track img {
+/* الصورة */
+.slide img {
   width: 100%;
   display: block;
   border-radius: 12px;
 }
 
-/* تأكد أن parent لا يمنع scroll */
-body, html {
-  overflow-x: visible !important;
+/* إخفاء scrollbar */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== FORCE SIMPLE WORKING CAROUSEL ===== */
+
+/* مهم */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+
+  padding: 20px;
+
+  /* هذا يمنع تكسير layout */
+  flex-wrap: nowrap;
+}
+
+/* كل صورة */
+.slide {
+  flex: 0 0 300px; /* عرض ثابت */
+}
+
+/* الصورة */
+.slide img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* إخفاء scrollbar */
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
